@@ -1,9 +1,13 @@
 package _9bottles
 
-func Verse(index uint) (string, error) {
+import (
+	"fmt"
+)
 
-	return "99 bottles of beer on the wall, " +
-		"99 bottles of beer.\n" +
-		"Take one down and pass it around, " +
-		"98 bottles of beer on the wall.\n", nil
+func Verse(index uint) (string, error) {
+	current := index
+	previous := index - 1
+	return fmt.Sprintf(
+			"%v bottles of beer on the wall, %v bottles of beer.\nTake one down and pass it around, %v bottles of beer on the wall.\n", current, current, previous),
+		nil
 }
